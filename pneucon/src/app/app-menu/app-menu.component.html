@@ -1,7 +1,9 @@
 <!-- Top Bar -->
-<div class="top-bar">
+<!-- Top Bar (only on Home) -->
+<div class="top-bar" *ngIf="router.url === '/home'">
   <span>Welcome to Pneucon</span>
 </div>
+
 
 <!-- Main Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar-bg">

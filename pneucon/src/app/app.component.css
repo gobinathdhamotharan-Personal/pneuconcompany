@@ -60,11 +60,15 @@
 }
 
 .social-btn.whatsapp {
-	color: #25d366;
+  background: #25d366 !important;
+  color: white !important;
 }
+
 .social-btn.linkedin {
-	color: #0077b5;
+  background: #0077b5 !important;
+  color: white !important;
 }
+
 .social-btn:hover {
 	background: #e6f7ff;
 	box-shadow: 0 4px 16px rgba(0,0,0,0.18);
@@ -73,4 +77,60 @@
 body, app-root {
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+/* Responsive video scaling */
+.video-background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile title size */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* Smaller screens (iPhones, small Androids) */
+@media (max-width: 480px) {
+  .animated-title {
+    font-size: 1.5rem;
+    gap: 0.2rem;
+  }
+  .floating-social-links {
+    right: 1rem;
+    bottom: 4rem;
+    gap: 0.8rem;
+  }
+  .social-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Default navbar background */
+.custom-navbar-bg {
+  background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
+}
+
+/* Remove background if inside a page banner */
+.has-banner .custom-navbar-bg {
+  background: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }

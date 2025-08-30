@@ -1,0 +1,161 @@
+.about-container {
+  position: relative;
+  background: url('../../assets/images/transport-logistics-products.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 100px 20px;
+  min-height: 100vh; /* Full page height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.about-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 30, 60, 0.55);
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  padding: 50px 60px; /* Increased for balance */
+  border-radius: 15px;
+}
+
+.about-content h2 {
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.about-content p {
+  font-size: 1.35rem;
+  line-height: 2;
+  margin-bottom: 22px;
+  color: #f1f1f1;
+}
+
+.about-content ul {
+  list-style: disc;
+  margin-left: 28px;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #f9f9f9;
+}
+
+/* Cards Section */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 100px 12%;
+  background: #f9f9f9;
+  min-height: 100vh; /* Full page section */
+  align-items: stretch;
+}
+
+.about-cards .card {
+  background: #fff;
+  padding: 50px 35px; /* Bigger padding */
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-cards .card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.about-cards .card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #002b5c;
+}
+
+.about-cards .card p {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.9;
+}
+
+.about-cards .card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    max-width: 750px;
+    padding: 40px;
+  }
+  .about-content h2 {
+    font-size: 2.7rem;
+  }
+  .about-content p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 70px 15px;
+    text-align: center;
+    justify-content: center;
+  }
+  .about-content {
+    padding: 30px;
+  }
+  .about-content h2 {
+    font-size: 2.3rem;
+  }
+  .about-cards {
+    padding: 70px 8%;
+    gap: 25px;
+  }
+  .about-cards .card {
+    padding: 40px 25px;
+  }
+  .about-cards .card img {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 50px 12px;
+  }
+  .about-content h2 {
+    font-size: 1.9rem;
+  }
+  .about-content p, .about-content ul {
+    font-size: 1rem;
+  }
+  .about-cards {
+    padding: 60px 6%;
+  }
+  .about-cards .card {
+    padding: 35px 20px;
+  }
+  .about-cards .card img {
+    width: 70px;
+    height: 70px;
+  }
+}
