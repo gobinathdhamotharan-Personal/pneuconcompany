@@ -11,4 +11,5 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class AppMenuComponent {
  constructor(public router: Router) {}
+ 
 }

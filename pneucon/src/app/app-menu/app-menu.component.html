@@ -1,17 +1,18 @@
 <!-- Top Bar -->
+
 <!-- Top Bar (only on Home) -->
-<div class="top-bar" *ngIf="router.url === '/home'">
+<div class="top-bar" >
   <span>Welcome to Pneucon</span>
 </div>
-
 
 <!-- Main Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar-bg">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     
-    <!-- Logo -->
-    <a class="navbar-brand pneucon-title" href="#">
-      Pneucon
+    <!-- Logo + Text -->
+    <a class="navbar-brand d-flex flex-column align-items-start" href="#">
+      <img src="../../assets/images/Logo.png" alt="Pneucon Logo" class="nav-logo">
+      <span class="company-name">PNEUCON ENGINEERING PTE LTD</span>
     </a>
 
     <!-- Navigation Links -->
@@ -22,18 +23,17 @@
       <li class="nav-item">
         <a class="nav-link nav-underline" [routerLink]="['/about']" routerLinkActive="active">ABOUT US</a>
       </li>
-
-    <!-- SERVICES with dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link nav-underline" routerLink="/services" routerLinkActive="active" role="button">
-        SERVICES <span class="dropdown-arrow">▼</span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="/inspection">Inspection And Testing</a></li>
-        <li><a class="dropdown-item" routerLink="/electricalServices">Electrical Services</a></li>
-        <li><a class="dropdown-item" routerLink="/mechanicalServices">Mechanical Services</a></li>
-      </ul>
-    </li>
+      <!-- SERVICES with dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link nav-underline" routerLink="/services" routerLinkActive="active" role="button">
+          SERVICES <span class="dropdown-arrow">▼</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/inspection">Inspection And Testing</a></li>
+          <li><a class="dropdown-item" routerLink="/electricalServices">Electrical Services</a></li>
+          <li><a class="dropdown-item" routerLink="/mechanicalServices">Mechanical Services</a></li>
+        </ul>
+      </li>
       <li class="nav-item">
         <a class="nav-link nav-underline" routerLink="/career">CAREER</a>
       </li>
@@ -43,3 +43,4 @@
     </ul>
   </div>
 </nav>
+

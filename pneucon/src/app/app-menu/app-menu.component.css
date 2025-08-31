@@ -8,6 +8,20 @@
   font-weight: 500;
   letter-spacing: 0.5px;
 }
+/* Logo inside navbar */
+.nav-logo {
+  height: 45px;   /* adjust as needed */
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
 
 /* Navbar */
 .custom-navbar-bg {
@@ -26,7 +40,7 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .nav-link {

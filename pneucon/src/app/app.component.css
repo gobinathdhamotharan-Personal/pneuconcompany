@@ -121,16 +121,4 @@ body, app-root {
   }
 }
 
-/* Default navbar background */
-.custom-navbar-bg {
-  background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
-}
 
-/* Remove background if inside a page banner */
-.has-banner .custom-navbar-bg {
-  background: transparent !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
