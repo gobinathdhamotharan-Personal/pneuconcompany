@@ -67,6 +67,8 @@
 
 /* -------------------- Contact Info -------------------- */
 .contact-info {
+    margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
   display: flex;
   flex-wrap: wrap;
   padding: 4rem 2rem;
@@ -120,6 +122,8 @@
 /* -------------------- Contact Form -------------------- */
 /* -------------------- Contact Form -------------------- */
 .contact-form {
+   margin-top: 10 !important;
+  padding-top: 10 !important;
   display: flex;
   flex-wrap: wrap;
   padding: 3rem 2rem;

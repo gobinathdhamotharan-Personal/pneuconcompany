@@ -1,1 +1,17 @@
-<p>career works!</p>
+<div class="container my-5">
+  <h2 class="text-center mb-4">Career</h2>
+  <div class="alert alert-primary text-center fw-bold" role="alert">
+    Join our team
+  </div>
+  <div class="row g-4">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let img of images">
+      <div class="card h-100 shadow-sm">
+        <img [src]="img" class="card-img-top career-img" alt="Career Image">
+        <div class="card-body">
+          <h5 class="card-title">Position Title</h5>
+          <p class="card-text">Short description about the position or team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

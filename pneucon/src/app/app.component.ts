@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AppMenuComponent } from './app-menu/app-menu.component';
@@ -16,7 +16,20 @@ import { ContactUsComponent } from './contact-us.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements  OnInit {
+
+visitorCount = 0;
+  ngOnInit() {  // <-- Correct lifecycle hook
+    if (!localStorage.getItem('visited')) {
+      let count = Number(localStorage.getItem('visitorCount') || 0);
+      count++;
+      localStorage.setItem('visitorCount', count.toString());
+      localStorage.setItem('visited', 'true');
+      this.visitorCount = count;
+    } else {
+      this.visitorCount = Number(localStorage.getItem('visitorCount') || 0);
+    }
+  }
   title = 'pneucon';
   whatsappModalOpen = false;
 
