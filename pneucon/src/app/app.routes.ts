@@ -20,4 +20,7 @@ export const routes: Routes = [
   { path: 'inspection', component: InspectionAndTestingComponent },
   { path: 'electricalServices', component: ElectricalServicesComponent },
   { path: 'mechanicalServices', component: MechanicalServicesComponent },
+  { path: 'services/mechanical', component: MechanicalServicesComponent },
+  { path: 'services/electrical', component: ElectricalServicesComponent },
+  { path: 'services/hydraulic', component: InspectionAndTestingComponent },
 ];

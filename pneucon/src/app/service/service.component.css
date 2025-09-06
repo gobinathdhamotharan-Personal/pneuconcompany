@@ -1,53 +1,41 @@
-.services-section-bg {
-  background: #f8f9fa;
-}
-
-.services-cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
+/* Base card styles */
 .service-card {
   position: relative;
-  flex: 0 0 260px;
-  max-width: 260px;
   border-radius: 14px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  height: 100%; /* cards stretch equally */
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: scale(1.05);
+  z-index: 2;
 }
 
 .service-card-img {
   width: 100%;
-  height: 180px;   /* reduced height */
+  height: 260px;
   object-fit: cover;
-  border-radius: 14px 14px 0 0;
+  border-radius: 14px;
 }
 
 .service-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 1rem;
-  color: #333;
-  background: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2), transparent);
+  color: #fff;
 }
 
 .service-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.service-desc {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #666;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 .service-arrow-btn {
@@ -69,19 +57,33 @@
   background: #e65c00;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .service-card {
-    flex: 0 0 45%;
+/* ✅ Mobile (iOS & Android) */
+@media (max-width: 575.98px) {
+  .service-card-img {
+    height: 200px; /* smaller height for small screens */
+  }
+  .service-title {
+    font-size: 1rem;
+  }
+  .service-arrow-btn {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.55rem;
   }
 }
 
-@media (max-width: 576px) {
-  .service-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+/* ✅ Tablets (portrait & landscape) */
+@media (min-width: 576px) and (max-width: 991.98px) {
   .service-card-img {
-    height: 160px;
+    height: 240px;
+  }
+  .service-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✅ Large screens (Windows/macOS desktops) */
+@media (min-width: 992px) {
+  .service-card-img {
+    height: 280px;
   }
 }

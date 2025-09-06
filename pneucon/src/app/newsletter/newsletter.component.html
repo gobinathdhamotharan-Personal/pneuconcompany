@@ -1,22 +1,27 @@
-<section class="newsletter-section">
+<section class="news-section">
   <div class="container">
-    <h2 class="newsletter-title">Our Monthly Newsletter</h2>
-    <p class="newsletter-subtitle">
-      Stay updated with our latest news, updates, and industry insights.
-    </p>
+    <div class="news-header">
+      <h2 class="news-title">
+        <span style="border-left:6px solid #ff6600; padding-left:12px;">Latest News</span>
+      </h2>
+      <!-- <a href="#" class="see-more-btn">See More →</a> -->
+    </div>
 
-    <!-- Example newsletter cards -->
-    <div class="newsletter-grid">
-      <div class="newsletter-card">
-        <h3>August 2025 Edition</h3>
-        <p>Highlights of our latest services and success stories.</p>
-        <a href="https://www.freecodecamp.org/news/" target="_blank" class="newsletter-btn">Read More</a>
-      </div>
-
-      <div class="newsletter-card">
-        <h3>July 2025 Edition</h3>
-        <p>Updates on electrical and mechanical testing projects.</p>
-        <a href="https://dev.to/" target="_blank" class="newsletter-btn">Read More</a>
+    <div class="news-grid">
+      <div class="news-card" *ngFor="let news of newsList">
+        <div class="news-image-wrapper">
+          <a [href]="news.link" target="_blank">
+            <img [src]="news.image" [alt]="news.title" class="news-image" />
+            <span class="news-more">More →</span>
+          </a>
+        </div>
+        <div class="news-content">
+          <p class="news-category">{{ news.category }}</p>
+          <h3 class="news-heading">
+            <a [href]="news.link" target="_blank">{{ news.title }}</a>
+          </h3>
+          <p class="news-date">{{ news.date }}</p>
+        </div>
       </div>
     </div>
   </div>

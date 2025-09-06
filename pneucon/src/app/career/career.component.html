@@ -1,17 +1,49 @@
-<div class="container my-5">
-  <h2 class="text-center mb-4">Career</h2>
-  <div class="alert alert-primary text-center fw-bold" role="alert">
-    Join our team
+<!-- Hero Banner Section -->
+<section class="career-banner d-flex align-items-center justify-content-center text-center">
+  <div class="overlay"></div>
+  <div class="banner-content">
+    <h1 class="text-white">Career</h1>
+    <p class="breadcrumb">Home / Career</p>
   </div>
-  <div class="row g-4">
-    <div class="col-12 col-sm-6 col-md-4" *ngFor="let img of images">
-      <div class="card h-100 shadow-sm">
-        <img [src]="img" class="card-img-top career-img" alt="Career Image">
-        <div class="card-body">
-          <h5 class="card-title">Position Title</h5>
-          <p class="card-text">Short description about the position or team.</p>
-        </div>
-      </div>
+</section>
+
+<!-- Career Opportunities Form -->
+<div class="container career-form my-5">
+  <h2 class="text-center mb-4">
+    Career <span class="highlight">Opportunities</span>
+  </h2>
+
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Full Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" placeholder="Enter full name" required>
     </div>
-  </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email Address <span class="text-danger">*</span></label>
+      <input type="email" class="form-control" placeholder="Enter email address" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">
+        Please attach your resume or CV 
+        <small>(PDF only, Max 24mb, Required)</small> <span class="text-danger">*</span>
+      </label>
+      <input type="file" class="form-control" accept=".pdf" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Subject <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" placeholder="Write here" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Message <span class="text-danger">*</span></label>
+      <textarea class="form-control" rows="4" placeholder="Enter message" required></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn-submit">SUBMIT</button>
+    </div>
+  </form>
 </div>
