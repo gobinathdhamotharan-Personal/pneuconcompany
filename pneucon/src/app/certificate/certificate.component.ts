@@ -14,36 +14,34 @@ export class CertificateComponent {
   certImages = [
     {
       img: 'assets/images/BIZSAFE STAR CERTIFICATE - 25062027.jpg',
-      pdf: 'assets/Certificate/BIZSAFE STAR CERTIFICATE - 25062027.pdf',
+      pdf: 'assets/Certificate/bizsafe.pdf',
       alt: 'Bizzsafe Certificate'
     },
     {
       img: 'assets/images/ISO 45001 CERT - PNEUCON ENGINEERING PTE. LTD..jpg',
-      pdf: 'assets/Certificate/ISO 45001 CERT - PNEUCON ENGINEERING PTE. LTD..pdf',
+      pdf: 'assets/Certificate/iso.pdf',
       alt: 'ISO Certificate'
     },
     {
       img: 'assets/images/SINGAPORE BUSINESS FEDERATION.jpg',
-      pdf: 'assets/Certificate/SINGAPORE BUSINESS FEDERATION.pdf',
+      pdf: 'assets/Certificate/singapore.pdf',
       alt: 'Singapore Certificate'
     }
   ];
 
   selectedPdf: string | null = null;
+  safePdfUrl: SafeResourceUrl | null = null;
 
   constructor(private sanitizer: DomSanitizer) {}
 
   openCertificate(pdfPath: string) {
     // this.selectedPdf = pdfPath;
       window.open(pdfPath, '_blank');
+      this.safePdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(pdfPath);
   }
 
   closePdf() {
     this.selectedPdf = null;
-  }
-
-  get safePdfUrl(): SafeResourceUrl | null {
-    return this.selectedPdf ? this.sanitizer.bypassSecurityTrustResourceUrl(this.selectedPdf) : null;
   }
 
   // slideCertificates(direction: number) {
