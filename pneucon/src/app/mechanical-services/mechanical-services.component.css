@@ -1,16 +1,67 @@
+.service-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem 6rem; /* extra bottom padding */
+  color: #333;
+  min-height: 85vh; /* ensures page covers most of viewport */
+}
+
+.service-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d3b66;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.service-header .intro-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.service-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Text block */
+.service-text {
+  flex: 2;
+  font-size: 1rem;
+  line-height: 1.8; /* slightly more height */
+  color: #444;
+}
+
+/* Image block */
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 16px;
+  flex: 1.5;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
+.service-image {
+  width: 100%;
+  max-width: 500px;   /* expanded width */
+  max-height: 320px;  /* keep height balanced */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  object-fit: cover;
+  align-self: flex-start;
 }
 
-.small-image {
-    max-width: 200px;
-    height: auto;
+
+/* Responsive */
+@media (max-width: 992px) {
+  .service-content {
+    flex-direction: column;
+  }
+  .service-image {
+    max-width: 80%;
+    max-height: none;
+    margin: 1rem auto;
+  }
 }
