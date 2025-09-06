@@ -1,13 +1,4 @@
-/* Top bar */
-.top-bar {
-  background: #00838f;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
+
 /* Logo inside navbar */
 .nav-logo {
   height: 45px;   /* adjust as needed */

@@ -10,6 +10,12 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './app-menu.component.css'
 })
 export class AppMenuComponent {
- constructor(public router: Router) {}
+   isHomePage: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.isHomePage = this.router.url === '/home' || this.router.url === '/';
+    });
+  }
  
 }
