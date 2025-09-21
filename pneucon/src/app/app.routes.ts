@@ -8,6 +8,7 @@ import { CareerComponent } from './career/career.component';
 import { InspectionAndTestingComponent } from './inspection-and-testing/inspection-and-testing.component';
 import { ElectricalServicesComponent } from './electrical-services/electrical-services.component';
 import { MechanicalServicesComponent } from './mechanical-services/mechanical-services.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -23,4 +24,5 @@ export const routes: Routes = [
   { path: 'services/mechanical', component: MechanicalServicesComponent },
   { path: 'services/electrical', component: ElectricalServicesComponent },
   { path: 'services/hydraulic', component: InspectionAndTestingComponent },
+  { path: 'gallery', component: GalleryComponent }
 ];

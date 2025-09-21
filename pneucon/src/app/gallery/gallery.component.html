@@ -1,0 +1,35 @@
+<div class="gallery-container" [ngClass]="{ 'all-category': selectedCategory === 'All' }">
+  <h2>Gallery</h2>
+
+  <div class="categories">
+    <button *ngFor="let category of categories"
+            [class.active]="selectedCategory === category"
+            (click)="filterCategory(category)">
+      {{ category }}
+    </button>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item" *ngFor="let item of filteredItems; let i = index">
+      <img [src]="item.src" [alt]="item.title" />
+
+      <!-- Overlay only in All -->
+      <div class="overlay" *ngIf="selectedCategory === 'All'">
+        <span class="plus-icon" (click)="openLightbox(i)">+</span>
+        <p>{{ item.title }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" *ngIf="lightboxOpen">
+    <span class="close" (click)="closeLightbox()">&times;</span>
+    <span class="prev" (click)="prevImage()">&#10094;</span>
+    <span class="next" (click)="nextImage()">&#10095;</span>
+    
+    <div class="lightbox-content">
+      <img [src]="filteredItems[currentIndex].src" [alt]="filteredItems[currentIndex].title" />
+      <p>{{ filteredItems[currentIndex].title }}</p>
+    </div>
+  </div>
+</div>

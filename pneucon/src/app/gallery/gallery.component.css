@@ -1,0 +1,148 @@
+/* Container for the gallery */
+.gallery-container {
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Category buttons container */
+.categories {
+  margin-bottom: 20px;
+}
+
+/* Buttons for filtering */
+.categories button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Active & hover states */
+.categories button.active,
+.categories button:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Grid layout for gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Base gallery item (default for all categories) */
+.gallery-item {
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  background: #fff;
+  transition: none; /* no hover animation by default */
+  cursor: pointer;
+}
+
+/* Images inside gallery items */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Overlay (hidden by default) */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.plus-icon {
+  font-size: 2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 8px 14px;
+  margin-bottom: 10px;
+}
+
+/* ✅ Hover effects ONLY when "All" category is active */
+.all-category .gallery-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.all-category .gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.all-category .gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.lightbox-content img {
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox p {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Controls */
+.close, .prev, .next {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+.close { top: 20px; right: 30px; }
+.prev { top: 50%; left: 20px; transform: translateY(-50%); }
+.next { top: 50%; right: 20px; transform: translateY(-50%); }
+
+/* Mobile-friendly tweaks */
+@media (hover: none) {
+  .all-category .gallery-item:hover {
+    transform: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  .categories button:hover {
+    transform: none;
+  }
+}

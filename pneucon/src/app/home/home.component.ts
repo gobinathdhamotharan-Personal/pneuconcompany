@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, NgZone, OnInit, OnDestroy } from '@angular/core';
+import { TextToSpeechService } from '../text-to-speech.service';
 
 @Component({
   selector: 'app-home',
@@ -7,22 +8,9 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-// export class HomeComponent {
-//   constructor(private el: ElementRef) {}
+export class HomeComponent implements OnInit, OnDestroy {
 
-// }
-export class HomeComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-
-    this.preloadImage('assets/images/cargo-ship-navigating-ocean.jpg');
-    const video: HTMLVideoElement | null = document.querySelector('.video-background');
-    if (video) {
-      video.muted = true;
-      video.play().catch(err => console.log('Autoplay blocked:', err));
-    }
-  }
-
-  // Preload image in a service
+    // Preload image in a service
   preloadImage(url: string): Promise<void> {
     return new Promise(resolve => {
       const img = new Image();
@@ -30,5 +18,33 @@ export class HomeComponent implements AfterViewInit {
       img.onload = () => resolve();
     });
   }
+  private intro = `Pneucon Engineering PTE Ltd. Singapore, Malaysia.
+  Established in 2004, Pneucon Engineering has proven through the years 
+  in Main Engine Maneuvering Remote Control Systems, Automation Systems and Trading.`;
 
+  constructor(private tts: TextToSpeechService) {}
+
+  ngOnInit(): void {
+    // Try autoplay after refresh
+    setTimeout(() => {
+      this.tts.speak(this.intro);
+    }, 500);
+
+    // Fallback if blocked → wait for first user action
+    const unlock = () => {
+      this.tts.speak(this.intro);
+      document.removeEventListener('click', unlock);
+      document.removeEventListener('keydown', unlock);
+    };
+
+    document.addEventListener('click', unlock);
+    document.addEventListener('keydown', unlock);
+  }
+
+  ngOnDestroy(): void {
+    // ✅ Stop any ongoing speech when leaving home page
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+  }
 }

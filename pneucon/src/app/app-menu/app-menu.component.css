@@ -13,6 +13,19 @@
   height: 45px;   /* adjust as needed */
   margin-bottom: 4px;
 }
+/* Align logo + text to right */
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* change from start to end */
+  text-align: right;
+}
+
+/* Optional: add spacing from navbar edge */
+.navbar-brand {
+  margin-left: auto; /* pushes it to far right */
+}
+
 
 .company-name {
   font-size: 16px;
