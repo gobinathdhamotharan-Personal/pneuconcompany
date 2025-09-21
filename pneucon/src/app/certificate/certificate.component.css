@@ -92,3 +92,36 @@
 .nav-btn:hover {
   background: #444;
 }
+
+
+@media (max-width: 992px) {
+  .cert-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cert-description,
+  .cert-gallery-wrapper {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .pdf-container {
+    width: 95vw;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cert-slider-img {
+    width: 90px;
+    height: 90px;
+  }
+  .pdf-container iframe {
+    height: 40vh;
+    min-height: 180px;
+  }
+  .pdf-container {
+    padding: 0.25rem;
+  }
+}
